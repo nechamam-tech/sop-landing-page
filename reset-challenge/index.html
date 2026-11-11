@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 2027 Reset Challenge | Klyne &amp; Co.</title>
+  <meta name="description" content="Eight steps to get your business back in order before 2027. Free, from Klyne & Co.">
+
+  <!-- LinkedIn / social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The 2027 Reset Challenge">
+  <meta property="og:description" content="Eight steps to get your business back in order before 2027. Free.">
+  <meta property="og:site_name" content="Klyne & Co.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #1c2120;
+      --black-2: #252b2a;
+      --blue: #3b9eff;
+      --blue-dark: #1f86ec;
+      --grey: #8c8f8e;
+      --grey-light: #b9bcbb;
+      --line: #e6e7e6;
+      --line-dark: #343b3a;
+      --bg: #f7f7f5;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--black);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .brand, .step-num { font-family: "Sora", "Poppins", sans-serif; }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* ---------- Hero (dark) ---------- */
+    .hero-band {
+      background: var(--black);
+      color: var(--white);
+      padding-bottom: 72px;
+    }
+
+    header { padding: 26px 0; }
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .brand span { color: var(--blue); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: start;
+      padding-top: 36px;
+    }
+
+    .kicker {
+      font-family: "Sora", sans-serif;
+      font-weight: 400;
+      color: var(--grey-light);
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+    h1 .accent { color: var(--blue); }
+
+    .sub {
+      font-size: 1.12rem;
+      color: var(--grey-light);
+      max-width: 32em;
+      margin-bottom: 30px;
+    }
+
+    .facts {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      font-size: 0.95rem;
+      color: var(--white);
+    }
+    .facts li { display: flex; align-items: center; gap: 10px; }
+    .facts svg { width: 18px; height: 18px; color: var(--blue); flex: 0 0 18px; }
+
+    /* ---------- Form card ---------- */
+    .card {
+      background: var(--white);
+      color: var(--black);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .card-sub { color: var(--grey); font-size: 0.95rem; margin-bottom: 24px; }
+
+    .field { margin-bottom: 16px; }
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .optional { color: var(--grey); font-weight: 400; }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      font: inherit;
+      font-size: 1rem;
+      color: var(--black);
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231c2120' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    select:invalid { color: #a5a8a7; }
+    input::placeholder { color: #a5a8a7; }
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(59, 158, 255, 0.18);
+    }
+    #otherWrap { display: none; }
+    #otherWrap.show { display: block; }
+
+    .btn {
+      width: 100%;
+      font: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--blue);
+      border: 0;
+      border-radius: 10px;
+      padding: 15px 20px;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background .15s, transform .05s;
+    }
+    .btn:hover { background: var(--blue-dark); }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible { outline: 3px solid rgba(59, 158, 255, 0.45); outline-offset: 2px; }
+
+    .fine {
+      font-size: 0.8rem;
+      color: var(--grey);
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .success { display: none; text-align: center; padding: 12px 0; }
+    .success.show { display: block; }
+    .success .tick {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--blue); color: var(--white);
+      display: grid; place-items: center; margin: 0 auto 16px;
+    }
+    .success .tick svg { width: 24px; height: 24px; }
+    .success h2 { margin-bottom: 8px; }
+    .success p { color: var(--grey); font-size: 0.95rem; }
+
+    /* ---------- Steps ---------- */
+    section.block { padding: 80px 0; }
+    .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .block h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .block .lead { color: #5b605f; max-width: 38em; margin-bottom: 40px; }
+
+    .steps {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .step {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 20px;
+    }
+    .step-num {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .step h3 { font-size: 1.02rem; line-height: 1.3; margin-bottom: 6px; }
+    .step p { font-size: 0.9rem; color: #5b605f; line-height: 1.5; }
+
+    .phase-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-top: 28px;
+      font-size: 0.9rem;
+      color: #5b605f;
+    }
+    .phase-row strong { font-family: "Sora", sans-serif; color: var(--black); }
+
+    /* ---------- For you ---------- */
+    .fit {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      border-top: 1px solid var(--line);
+      padding-top: 72px;
+    }
+    .fit ul { list-style: none; display: grid; gap: 14px; }
+    .fit li { display: flex; gap: 12px; align-items: flex-start; }
+    .fit li svg { width: 20px; height: 20px; flex: 0 0 20px; color: var(--blue); margin-top: 3px; }
+
+    /* ---------- Final CTA ---------- */
+    .cta-band {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 72px 0;
+    }
+    .cta-band h2 {
+      font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .cta-band p { color: var(--grey-light); margin-bottom: 28px; }
+    .cta-band .btn { width: auto; display: inline-block; text-decoration: none; padding: 15px 34px; }
+
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--line-dark);
+      color: var(--grey);
+      font-size: 0.82rem;
+      padding: 26px 0;
+    }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+    .tagline { text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: 0.72rem; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 900px) {
+      .steps { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 12px; }
+      .hero-band { padding-bottom: 48px; }
+      .card { padding: 24px; }
+      header { padding: 20px 0; }
+      section.block { padding: 56px 0; }
+      .fit { grid-template-columns: 1fr; gap: 28px; padding-top: 52px; }
+    }
+    @media (max-width: 480px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-band">
+    <header>
+      <div class="wrap">
+        <a class="brand" href="https://klyneandco.com">Klyne <span>&amp;</span> Co.</a>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+
+        <!-- Left: copy -->
+        <div>
+          <p class="kicker">Free challenge &middot; Before January 1</p>
+          <h1>The 2027 Reset: <span class="accent">get your business back in order</span> before the new year.</h1>
+          <p class="sub">Eight steps to clear out what piled up this year, write down how things really get done, and hand some of it off. Start 2027 with less running through you.</p>
+
+          <ul class="facts">
+            <li>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+              8 short steps
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+              Sent to your inbox
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+              Free
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: signup -->
+        <aside class="card" id="signup">
+          <div id="formWrap">
+            <h2>Join the 2027 Reset</h2>
+            <p class="card-sub">Tell me where to send step one.</p>
+
+            <!-- ============================================================
+                 KIT SIGNUP FORM — not connected yet.
+                 To connect: set the form action to your Kit form URL, e.g.
+                 https://app.kit.com/forms/XXXXXXX/subscriptions
+                 and create a Kit custom field with the key "biggest_challenge".
+                 Then remove the preview script at the bottom of this file.
+                 ============================================================ -->
+            <form id="resetForm" action="#" method="post">
+              <div class="field">
+                <label for="first_name">First name</label>
+                <input type="text" id="first_name" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email_address" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="challenge">What do you most want to reset?</label>
+                <select id="challenge" name="fields[biggest_challenge]" required>
+                  <option value="" disabled selected>Pick the closest one</option>
+                  <option>Everything still runs through me</option>
+                  <option>My team keeps asking me how to do things</option>
+                  <option>Our processes only live in my head</option>
+                  <option>Too many tools, nothing connected</option>
+                  <option>I can't see where my week goes</option>
+                  <option value="Other">Something else</option>
+                </select>
+              </div>
+              <div class="field" id="otherWrap">
+                <label for="challenge_other">Tell me in a few words <span class="optional">(optional)</span></label>
+                <input type="text" id="challenge_other" name="fields[biggest_challenge_other]" placeholder="e.g. Hiring and training new staff">
+              </div>
+              <button type="submit" class="btn">Start the Reset</button>
+            </form>
+
+            <p class="fine">You'll also get my newsletter, <em>Systems That Work</em>. Unsubscribe anytime.</p>
+          </div>
+
+          <div class="success" id="successMsg" role="status" aria-live="polite">
+            <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h2>You're in.</h2>
+            <p>Check your inbox for step one. If it isn't there in a few minutes, look in your promotions or spam folder.</p>
+          </div>
+        </aside>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- ---------- The 8 steps ---------- -->
+  <section class="block">
+    <div class="wrap">
+      <p class="label">The 8 steps</p>
+      <h2>What we'll work through</h2>
+      <p class="lead">Each step is short and practical. You'll finish with a clear picture of how your business runs, the key processes written down, and a plan for what comes off your plate in 2027.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <p class="step-num">Step 01</p>
+          <h3>Clear the backlog</h3>
+          <p>List everything that's been sitting on your plate this year.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">Step 02</p>
+          <h3>See where your week goes</h3>
+          <p>Track a normal week and find what eats your time.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">Step 03</p>
+          <h3>Find the bottlenecks</h3>
+          <p>Spot the questions only you can answer, and why.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">Step 04</p>
+          <h3>Pick your top three</h3>
+          <p>Choose the processes that would free you up the most.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">Step 05</p>
+          <h3>Write them down</h3>
+          <p>Turn each one into clear steps anyone on your team can follow.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">Step 06</p>
+          <h3>Tidy your tools</h3>
+          <p>Cut what you don't use. Make sure everyone knows where things live.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">Step 07</p>
+          <h3>Hand one off</h3>
+          <p>Delegate your first process, with the steps to back it up.</p>
+        </li>
+        <li class="step">
+          <p class="step-num">Step 08</p>
+          <h3>Set your 2027 rhythm</h3>
+          <p>Build a simple weekly check-in so things stay in order.</p>
+        </li>
+      </ol>
+
+      <div class="phase-row">
+        <span><strong>Define</strong> &middot; steps 1&ndash;4</span>
+        <span><strong>Document</strong> &middot; steps 5&ndash;6</span>
+        <span><strong>Delegate</strong> &middot; steps 7&ndash;8</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Who it's for ---------- -->
+  <section class="block" style="padding-top:0">
+    <div class="wrap fit">
+      <div>
+        <p class="label">Who it's for</p>
+        <h2>Owners who are the answer to every question</h2>
+        <p class="lead" style="margin-bottom:0">If you're ending the year tired and still holding most of it yourself, this is for you. You don't need new software. You need what's in your head written down and in the right hands.</p>
+      </div>
+      <ul>
+        <li>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+          <span>Your team is good, but they still check with you before they act.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+          <span>You can't take a day off without your phone buzzing.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+          <span>You've meant to "get organized" all year and it hasn't happened.</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+          <span>You want 2027 to run differently, not just be busier.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ---------- Final CTA ---------- -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Start 2027 with less on your plate.</h2>
+      <p>Eight steps. Free. Starts as soon as you sign up.</p>
+      <a href="#signup" class="btn">Join the 2027 Reset</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Klyne &amp; Co.</span>
+      <span class="tagline">Helping Leaders Step Back and Teams Step Up</span>
+    </div>
+  </footer>
+
+  <script>
+    // Show the "Tell me in a few words" box when "Something else" is picked.
+    var sel = document.getElementById('challenge');
+    var otherWrap = document.getElementById('otherWrap');
+    sel.addEventListener('change', function () {
+      otherWrap.classList.toggle('show', sel.value === 'Other');
+    });
+
+    // PREVIEW ONLY: shows the thank-you message without sending anything.
+    // Remove this once the form posts to Kit.
+    document.getElementById('resetForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('successMsg').classList.add('show');
+    });
+  </script>
+</body>
+</html>
