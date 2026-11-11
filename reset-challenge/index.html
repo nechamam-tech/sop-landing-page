@@ -48,6 +48,7 @@
       background: var(--black);
       color: var(--white);
       padding-bottom: 72px;
+      min-height: calc(100vh - 70px);
     }
 
     header { padding: 26px 0; }
@@ -197,83 +198,6 @@
     .success h2 { margin-bottom: 8px; }
     .success p { color: var(--grey); font-size: 0.95rem; }
 
-    /* ---------- Steps ---------- */
-    section.block { padding: 80px 0; }
-    .label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--blue);
-      margin-bottom: 10px;
-    }
-    .block h2 {
-      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-    .block .lead { color: #5b605f; max-width: 38em; margin-bottom: 40px; }
-
-    .steps {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    .step {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px 20px;
-    }
-    .step-num {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--blue);
-      margin-bottom: 10px;
-    }
-    .step h3 { font-size: 1.02rem; line-height: 1.3; margin-bottom: 6px; }
-    .step p { font-size: 0.9rem; color: #5b605f; line-height: 1.5; }
-
-    .phase-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 22px;
-      margin-top: 28px;
-      font-size: 0.9rem;
-      color: #5b605f;
-    }
-    .phase-row strong { font-family: "Sora", sans-serif; color: var(--black); }
-
-    /* ---------- For you ---------- */
-    .fit {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      border-top: 1px solid var(--line);
-      padding-top: 72px;
-    }
-    .fit ul { list-style: none; display: grid; gap: 14px; }
-    .fit li { display: flex; gap: 12px; align-items: flex-start; }
-    .fit li svg { width: 20px; height: 20px; flex: 0 0 20px; color: var(--blue); margin-top: 3px; }
-
-    /* ---------- Final CTA ---------- */
-    .cta-band {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 72px 0;
-    }
-    .cta-band h2 {
-      font-size: clamp(1.6rem, 3.4vw, 2.3rem);
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-    .cta-band p { color: var(--grey-light); margin-bottom: 28px; }
-    .cta-band .btn { width: auto; display: inline-block; text-decoration: none; padding: 15px 34px; }
-
     footer {
       background: var(--black);
       border-top: 1px solid var(--line-dark);
@@ -285,19 +209,11 @@
     .tagline { text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: 0.72rem; }
 
     /* ---------- Mobile ---------- */
-    @media (max-width: 900px) {
-      .steps { grid-template-columns: repeat(2, 1fr); }
-    }
     @media (max-width: 820px) {
       .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 12px; }
       .hero-band { padding-bottom: 48px; }
       .card { padding: 24px; }
       header { padding: 20px 0; }
-      section.block { padding: 56px 0; }
-      .fit { grid-template-columns: 1fr; gap: 28px; padding-top: 52px; }
-    }
-    @media (max-width: 480px) {
-      .steps { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -389,102 +305,6 @@
       </section>
     </main>
   </div>
-
-  <!-- ---------- The 8 steps ---------- -->
-  <section class="block">
-    <div class="wrap">
-      <p class="label">The 8 steps</p>
-      <h2>What we'll work through</h2>
-      <p class="lead">Each step is short and practical. You'll finish with a clear picture of how your business runs, the key processes written down, and a plan for what comes off your plate in 2027.</p>
-
-      <ol class="steps">
-        <li class="step">
-          <p class="step-num">Step 01</p>
-          <h3>Clear the backlog</h3>
-          <p>List everything that's been sitting on your plate this year.</p>
-        </li>
-        <li class="step">
-          <p class="step-num">Step 02</p>
-          <h3>See where your week goes</h3>
-          <p>Track a normal week and find what eats your time.</p>
-        </li>
-        <li class="step">
-          <p class="step-num">Step 03</p>
-          <h3>Find the bottlenecks</h3>
-          <p>Spot the questions only you can answer, and why.</p>
-        </li>
-        <li class="step">
-          <p class="step-num">Step 04</p>
-          <h3>Pick your top three</h3>
-          <p>Choose the processes that would free you up the most.</p>
-        </li>
-        <li class="step">
-          <p class="step-num">Step 05</p>
-          <h3>Write them down</h3>
-          <p>Turn each one into clear steps anyone on your team can follow.</p>
-        </li>
-        <li class="step">
-          <p class="step-num">Step 06</p>
-          <h3>Tidy your tools</h3>
-          <p>Cut what you don't use. Make sure everyone knows where things live.</p>
-        </li>
-        <li class="step">
-          <p class="step-num">Step 07</p>
-          <h3>Hand one off</h3>
-          <p>Delegate your first process, with the steps to back it up.</p>
-        </li>
-        <li class="step">
-          <p class="step-num">Step 08</p>
-          <h3>Set your 2027 rhythm</h3>
-          <p>Build a simple weekly check-in so things stay in order.</p>
-        </li>
-      </ol>
-
-      <div class="phase-row">
-        <span><strong>Define</strong> &middot; steps 1&ndash;4</span>
-        <span><strong>Document</strong> &middot; steps 5&ndash;6</span>
-        <span><strong>Delegate</strong> &middot; steps 7&ndash;8</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- Who it's for ---------- -->
-  <section class="block" style="padding-top:0">
-    <div class="wrap fit">
-      <div>
-        <p class="label">Who it's for</p>
-        <h2>Owners who are the answer to every question</h2>
-        <p class="lead" style="margin-bottom:0">If you're ending the year tired and still holding most of it yourself, this is for you. You don't need new software. You need what's in your head written down and in the right hands.</p>
-      </div>
-      <ul>
-        <li>
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
-          <span>Your team is good, but they still check with you before they act.</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
-          <span>You can't take a day off without your phone buzzing.</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
-          <span>You've meant to "get organized" all year and it hasn't happened.</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
-          <span>You want 2027 to run differently, not just be busier.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ---------- Final CTA ---------- -->
-  <section class="cta-band">
-    <div class="wrap">
-      <h2>Start 2027 with less on your plate.</h2>
-      <p>Eight steps. Free. Starts as soon as you sign up.</p>
-      <a href="#signup" class="btn">Join the 2027 Reset</a>
-    </div>
-  </section>
 
   <footer>
     <div class="wrap">
