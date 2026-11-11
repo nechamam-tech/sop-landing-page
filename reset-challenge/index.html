@@ -122,17 +122,8 @@
     .card-sub { color: var(--grey); font-size: 0.95rem; margin-bottom: 24px; }
 
     .field { margin-bottom: 16px; }
-    label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-    .optional { color: var(--grey); font-weight: 400; }
-
     input[type="text"],
-    input[type="email"],
-    select {
+    input[type="email"] {
       width: 100%;
       font: inherit;
       font-size: 1rem;
@@ -143,25 +134,12 @@
       background: var(--white);
       transition: border-color .15s, box-shadow .15s;
     }
-    select {
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231c2120' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      padding-right: 40px;
-      cursor: pointer;
-    }
-    select:invalid { color: #a5a8a7; }
     input::placeholder { color: #a5a8a7; }
-    input:focus, select:focus {
+    input:focus {
       outline: none;
       border-color: var(--blue);
       box-shadow: 0 0 0 4px rgba(59, 158, 255, 0.18);
     }
-    #otherWrap { display: none; }
-    #otherWrap.show { display: block; }
-
     .btn {
       width: 100%;
       font: inherit;
@@ -261,33 +239,14 @@
                  KIT SIGNUP FORM — not connected yet.
                  To connect: set the form action to your Kit form URL, e.g.
                  https://app.kit.com/forms/XXXXXXX/subscriptions
-                 and create a Kit custom field with the key "biggest_challenge".
                  Then remove the preview script at the bottom of this file.
                  ============================================================ -->
             <form id="resetForm" action="#" method="post">
               <div class="field">
-                <label for="first_name">First name</label>
-                <input type="text" id="first_name" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name" required>
+                <input type="text" id="first_name" aria-label="First name" name="fields[first_name]" placeholder="Your first name" autocomplete="given-name" required>
               </div>
               <div class="field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email_address" placeholder="you@company.com" autocomplete="email" required>
-              </div>
-              <div class="field">
-                <label for="challenge">What do you most want to reset?</label>
-                <select id="challenge" name="fields[biggest_challenge]" required>
-                  <option value="" disabled selected>Pick the closest one</option>
-                  <option>Everything still runs through me</option>
-                  <option>My team keeps asking me how to do things</option>
-                  <option>Our processes only live in my head</option>
-                  <option>Too many tools, nothing connected</option>
-                  <option>I can't see where my week goes</option>
-                  <option value="Other">Something else</option>
-                </select>
-              </div>
-              <div class="field" id="otherWrap">
-                <label for="challenge_other">Tell me in a few words <span class="optional">(optional)</span></label>
-                <input type="text" id="challenge_other" name="fields[biggest_challenge_other]" placeholder="e.g. Hiring and training new staff">
+                <input type="email" id="email" aria-label="Email" name="email_address" placeholder="you@company.com" autocomplete="email" required>
               </div>
               <button type="submit" class="btn">Start the Reset</button>
             </form>
@@ -314,13 +273,6 @@
   </footer>
 
   <script>
-    // Show the "Tell me in a few words" box when "Something else" is picked.
-    var sel = document.getElementById('challenge');
-    var otherWrap = document.getElementById('otherWrap');
-    sel.addEventListener('change', function () {
-      otherWrap.classList.toggle('show', sel.value === 'Other');
-    });
-
     // PREVIEW ONLY: shows the thank-you message without sending anything.
     // Remove this once the form posts to Kit.
     document.getElementById('resetForm').addEventListener('submit', function (e) {
